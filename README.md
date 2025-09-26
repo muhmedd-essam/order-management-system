@@ -1,66 +1,120 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Order Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A simple Order Management System built with Laravel, PHP, and MySQL. The system is designed to manage customers, products, and orders with role-based access control, caching, and a clean repository design pattern.
 
-## About Laravel
+Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Authentication:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+User registration, login, and logout using Laravel Breeze.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Role-based access with Admin and Staff roles, making it easy to add new roles in the future.
 
-## Learning Laravel
+Customer Management:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+CRUD operations (Create, Read, Update, Delete) for managing customers.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Search/filter customers by name or email.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Product Management:
 
-## Laravel Sponsors
+CRUD operations for managing products (name, price, stock quantity).
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Pagination of product listings for easy browsing.
 
-### Premium Partners
+Order Management:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Create orders by selecting customers and products.
 
-## Contributing
+Automatically reduce product stock after an order is placed.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+View all orders with details (customer name, items ordered, total amount).
 
-## Code of Conduct
+Cancel or delete orders with optional restock functionality.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Role-Based Access:
 
-## Security Vulnerabilities
+Admin and staff roles with Spatie Laravel Permission for easy management of roles and permissions.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Future-proof design to allow easy addition of new roles and permissions.
 
-## License
+Caching:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Optimized system with caching implemented for faster performance when retrieving product and customer data.
+
+Reporting:
+
+Simple dashboard displaying total orders, total revenue, and top 5 customers.
+
+Requirements
+
+PHP 8.1+
+
+Laravel 10+
+
+MySQL or MariaDB
+
+Composer
+
+Installation
+1. Clone the repository:
+git clone https://github.com/your-username/order-management-system.git
+cd order-management-system
+
+2. Install dependencies:
+composer install
+
+3. Set up your environment file:
+
+Copy .env.example to .env and configure the database connection:
+
+cp .env.example .env
+
+
+Update .env with your database credentials and other environment variables.
+
+4. Run migrations:
+php artisan migrate --seed
+
+5. Start the local development server:
+php artisan serve
+
+6. Access the application:
+
+Open your browser and navigate to http://localhost:8000
+
+Admin Credentials
+
+Email: admin@admin.com
+
+Password: password123
+
+Live Application
+
+You can access the live version of the application at:
+Live Application URL
+
+Database Dump
+
+If you need to import the database, you can download the SQL dump from this link
+ or use the provided seeders to populate the database.
+
+Folder Structure
+
+/app: Contains the application logic (models, controllers, etc.)
+
+/database/migrations: Contains the database migrations for creating tables.
+
+/database/seeders: Contains the seeders for populating initial data.
+
+.env.example: Example environment file with placeholder values.
+
+README.md: This file.
+
+/repositories: Directory containing repositories for each entity (Customer, Product, Order).
+
+/config/permission.php: Configuration file for managing roles and permissions using Spatie Laravel Permission.
+
+Contributing
+
+If you'd like to contribute to this project, feel free to fork the repository and submit a pull request.
