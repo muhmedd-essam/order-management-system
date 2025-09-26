@@ -58,7 +58,7 @@ Composer
 
 Installation
 1. Clone the repository:
-git clone https://github.com/your-username/order-management-system.git
+git clone https://github.com/muhmedd-essam/order-management-system/tree/master
 cd order-management-system
 
 2. Install dependencies:
@@ -85,14 +85,19 @@ Open your browser and navigate to http://localhost:8000
 
 Admin Credentials
 
-Email: admin@admin.com
+Email: admin@example.com
 
-Password: password123
+Password: password
 
-Live Application
 
-You can access the live version of the application at:
-Live Application URL
+
+staff Credentials
+
+Email: staff@example.com
+
+Password: password
+
+
 
 Database Dump
 
